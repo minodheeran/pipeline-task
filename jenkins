@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+     
+stages {
+          stage('SCM') {
+            steps{
+               cleanWs ()
+              git branch: 'main', credentialsId: 'minoid', url: 'https://github.com/minodheeran/sample.git'
+            }
+        }
+   }
+}   
